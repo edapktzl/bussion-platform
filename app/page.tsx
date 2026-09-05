@@ -1,9 +1,11 @@
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <h1 className="text-4xl font-bold text-black">
-        Bussion Platform
-      </h1>
+      <Navbar />
+      <Hero />
     </main>
   );
 }
