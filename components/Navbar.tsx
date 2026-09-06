@@ -1,31 +1,46 @@
-﻿export default function Navbar() {
+"use client";
+
+import { useRef, useState } from "react";
+
+const links = [
+  { title: "Platform", href: "#platform" },
+  { title: "Çözümler", href: "https://www.ideateknoloji.com/#products" },
+  { title: "Kaynaklar", href: "https://www.ideateknoloji.com/bussion-v6-whats-new.html" },
+  { title: "Hakkımızda", href: "https://www.ideateknoloji.com/#about" },
+  { title: "İletişim", href: "mailto:iletisim@ideateknoloji.com" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const button = useRef<HTMLButtonElement>(null);
+
   return (
-    <nav className="w-full bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
-        <h2 className="text-2xl font-bold text-black">
-          Bussion
-        </h2>
-
-        <div className="flex items-center gap-8">
-          <a href="#" className="text-gray-700 hover:text-black">
-            Platform
-          </a>
-
-          <a href="#" className="text-gray-700 hover:text-black">
-            Kullanım alanları
-          </a>
-
-          <a href="#" className="text-gray-700 hover:text-black">
-            Hakkımızda
-          </a>
-
-          <a href="#" className="text-gray-700 hover:text-black">
-            İletişim
-          </a>
-        </div>
-
-      </div>
-    </nav>
+    <header className="border-b border-stone-200 bg-white">
+      <nav aria-label="Ana menü" className="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-5 py-4 sm:px-8 lg:px-12"
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && open) {
+            setOpen(false);
+            button.current?.focus();
+          }
+        }}>
+        <a href="#platform" onClick={() => setOpen(false)} aria-label="Bussion ana sayfa" className="text-2xl font-semibold tracking-tight text-emerald-950">
+          bussion<span className="text-emerald-600">.</span>
+        </a>
+        <button ref={button} type="button" aria-expanded={open} aria-controls="navigation-links" onClick={() => setOpen(!open)}
+          className="min-h-11 rounded-md border border-stone-200 px-4 text-sm text-stone-700 lg:hidden">
+          {open ? "Menüyü kapat ×" : "Menü ☰"}
+        </button>
+        <ul id="navigation-links" className={`${open ? "flex" : "hidden"} mt-4 w-full flex-col gap-2 border-t border-stone-200 pt-3 lg:mt-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0`}>
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center rounded-md px-2 text-sm text-stone-600 hover:bg-stone-50">{link.title}</a>
+            </li>
+          ))}
+          <li>
+            <a href="mailto:iletisim@ideateknoloji.com?subject=Bussion%20demo" onClick={() => setOpen(false)} className="flex min-h-11 items-center justify-center rounded-md bg-emerald-900 px-5 py-3 text-sm font-medium text-white hover:bg-emerald-800">Demo iste ↗</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
