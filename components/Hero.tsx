@@ -10,7 +10,7 @@ export default function Hero() {
             bir sonraki adımınızı güvenle atın.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href="mailto:iletisim@ideateknoloji.com?subject=Bussion%20demo" className="inline-flex min-h-12 items-center justify-center rounded-md bg-emerald-900 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-800">Demo iste ↗</a>
+            <button type="button" disabled className="inline-flex min-h-12 items-center justify-center rounded-md bg-emerald-900 px-6 py-3 text-sm font-medium text-white">Demo iste</button>
           </div>
         </div>
       </div>

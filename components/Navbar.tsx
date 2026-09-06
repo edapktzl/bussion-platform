@@ -3,11 +3,11 @@
 import { useRef, useState } from "react";
 
 const links = [
-  { title: "Platform", href: "#platform" },
-  { title: "Çözümler", href: null },
-  { title: "Kaynaklar", href: null },
-  { title: "Hakkımızda", href: null },
-  { title: "İletişim", href: "mailto:iletisim@ideateknoloji.com" },
+  { title: "Platform", href: "" },
+  { title: "Çözümler", href: "" },
+  { title: "Kaynaklar", href: "" },
+  { title: "Hakkımızda", href: "" },
+  { title: "İletişim", href: "" },
 ];
 
 export default function Navbar() {
@@ -41,7 +41,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a href="mailto:iletisim@ideateknoloji.com?subject=Bussion%20demo" onClick={() => setOpen(false)} className="flex min-h-11 items-center justify-center rounded-md bg-emerald-900 px-5 py-3 text-sm font-medium text-white hover:bg-emerald-800">Demo iste ↗</a>
+            <button type="button" disabled className="flex min-h-11 w-full items-center justify-center rounded-md bg-emerald-900 px-5 py-3 text-sm font-medium text-white">Demo iste</button>
           </li>
         </ul>
       </nav>
