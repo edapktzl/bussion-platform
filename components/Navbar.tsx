@@ -4,9 +4,9 @@ import { useRef, useState } from "react";
 
 const links = [
   { title: "Platform", href: "#platform" },
-  { title: "Çözümler", href: "https://www.ideateknoloji.com/#products" },
-  { title: "Kaynaklar", href: "https://www.ideateknoloji.com/bussion-v6-whats-new.html" },
-  { title: "Hakkımızda", href: "https://www.ideateknoloji.com/#about" },
+  { title: "Çözümler", href: null },
+  { title: "Kaynaklar", href: null },
+  { title: "Hakkımızda", href: null },
   { title: "İletişim", href: "mailto:iletisim@ideateknoloji.com" },
 ];
 
@@ -32,8 +32,12 @@ export default function Navbar() {
         </button>
         <ul id="navigation-links" className={`${open ? "flex" : "hidden"} mt-4 w-full flex-col gap-2 border-t border-stone-200 pt-3 lg:mt-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0`}>
           {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center rounded-md px-2 text-sm text-stone-600 hover:bg-stone-50">{link.title}</a>
+            <li key={link.title}>
+              {link.href ? (
+                <a href={link.href} onClick={() => setOpen(false)} className="flex min-h-11 items-center rounded-md px-2 text-sm text-stone-600 hover:bg-stone-50">{link.title}</a>
+              ) : (
+                <span className="flex min-h-11 items-center px-2 text-sm text-stone-600">{link.title}</span>
+              )}
             </li>
           ))}
           <li>
