@@ -16,7 +16,7 @@ export default function Hero() {
             bir sonraki adımınızı güvenle atın.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <button type="button" disabled className="inline-flex min-h-12 items-center justify-center rounded-md bg-emerald-900 px-6 py-3 text-sm font-medium text-white">Demo iste</button>
+            <button type="button" disabled className="inline-flex min-h-12 items-center justify-center rounded-md bg-emerald-900 px-6 py-3 text-sm font-medium text-white">Bize ulaşın</button>
           </div>
         </div>
         <Image
