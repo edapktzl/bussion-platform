@@ -3,8 +3,11 @@ export default function Hero() {
     <section id="platform" aria-labelledby="hero-title" className="bg-stone-50 text-emerald-950">
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-24">
         <div className="min-w-0">
-          <p className="text-xs font-semibold tracking-widest text-emerald-800">VERİLERİNİZ BİR ARADA</p>
-          <h1 id="hero-title" className="mt-5 max-w-xl text-4xl leading-tight font-semibold tracking-tight sm:text-5xl lg:text-6xl">İşinizin büyük resmini görün.</h1>
+          <p className="text-xs font-semibold tracking-widest text-emerald-800">VERİDEN DAHA FAZLASI</p>
+          <h1 id="hero-title" className="mt-5 max-w-3xl text-4xl leading-tight font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+            Daha akıllı kararlar,<br />
+            daha güçlü yarınlar.
+          </h1>
           <p className="mt-5 max-w-lg text-base leading-7 text-stone-600 sm:text-lg sm:leading-8">
             Veriden içgörüye, tek platformda. İşinizi daha iyi anlayın,
             bir sonraki adımınızı güvenle atın.
